@@ -1,0 +1,21 @@
+<%= form_for(@case_sensitive) do |f| %>
+  <% if @case_sensitive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@case_sensitive.errors.count, "error") %> prohibited this case_sensitive from being saved:</h2>
+
+      <ul>
+      <% @case_sensitive.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
